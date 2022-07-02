@@ -35,7 +35,8 @@ link Postman :
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/15516682-20fa5f76-30ae-452f-a6b7-63f1fb70e1ca?action=collection%2Ffork&collection-url=entityId%3D15516682-20fa5f76-30ae-452f-a6b7-63f1fb70e1ca%26entityType%3Dcollection%26workspaceId%3Dac26dbf3-c101-445d-89ed-1fff814d7bf5)
 
 
-##Webiste Content Management System
+#API Content Management System
+API ini dibangun dengan menggunakan bahasa pemrograman PHP 7 dan menggunakan Framework Lumen. API ini memiliki Fungsi utama sebagai CMS.
 
 #Fitur
 - Autentifikasi
