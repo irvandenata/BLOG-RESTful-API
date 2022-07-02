@@ -7,8 +7,11 @@
     "require": {
         "php": "^7.3|^8.0",
         "flipbox/lumen-generator": "^8.2",
+        "illuminate/mail": "^8.83",
+        "illuminate/notifications": "^8.83",
         "intervention/image": "^2.6",
         "laravel/lumen-framework": "^8.0",
+        "ramsey/uuid": "^4.2",
         "spatie/laravel-fractal": "^5.8",
         "spatie/laravel-query-builder": "^3.6",
         "tymon/jwt-auth": "^1.0"

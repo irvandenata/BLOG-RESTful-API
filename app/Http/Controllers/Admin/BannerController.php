@@ -12,10 +12,6 @@ use Spatie\Fractal\Facades\Fractal;
 
 class BannerController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:api', ['except' => ['login']]);
-    // }
     public function index()
     {
 

@@ -23,9 +23,6 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-$app->withFacades();
-
-$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +34,17 @@ $app->withEloquent();
 | your own bindings here if you like or you can make another file.
 |
 */
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(Illuminate\Mail\MailServiceProvider::class);
+$app->register(Illuminate\Auth\Passwords\PasswordResetServiceProvider::class);
+$app->register(Illuminate\Notifications\NotificationServiceProvider::class);
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+$app->configure('mail');
+$app->configure('services');
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
@@ -71,6 +74,8 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
+$app->withFacades();
+$app->withEloquent();
 
 $app->middleware([
     App\Http\Middleware\CorsMiddleware::class

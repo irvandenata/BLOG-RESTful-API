@@ -28,11 +28,18 @@ class CategoryController extends Controller
         $query = Category::where("name", $request->name);
 
         $validate = $query->get();
-        if ($validate->count() > 0) {
-            $add = $query->latest()->first()->id;
-            $slug = Str::slug($request->name, '-') . "-" . ($validate->count() + $add);
-        } else
-            $slug =  Str::slug($request->name, '-');
+
+        switch ($validate->count()) {
+            case 0:
+                $slug = Str::slug($request->name, '-');
+                break;
+
+            default:
+                $add = $query->latest()->first()->id;
+                $slug = Str::slug($request->name, '-') . "-" . ($validate->count() + $add);
+                break;
+
+        }
 
         $request->request->add([
             'slug' => $slug,
